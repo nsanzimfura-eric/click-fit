@@ -1,6 +1,34 @@
 body {
-  background-color: black;
+  background-color: rgb(5, 5, 5);
   padding: 0;
   margin: 0;
   color: white;
+}
+
+/* variables */
+
+:root {
+  /* Fonts */
+  --julius: "Julius Sans One", sans-serif;
+  --poppins: "Poppins", sans-serif;
+
+  /* colors */
+  --primary-green: #33b738;
+  --secondary-green: #70cd74;
+  --primary-dark: #000000;
+  --secondary-dark: #141313;
+  --primary-white: #ffffff;
+  --secondary-white: #e5efe7;
+
+  /* Font Size Variables */
+  --h1: 2.5rem;
+  --h2: 1.75rem;
+  --h3: 1.5rem;
+  --p: 1rem;
+  --small: 0.8rem;
+  --span: 0.875rem;
+
+  /* Line Height Variables */
+  --line-height-heading: 1.2;
+  --line-height-body: 1.4;
 }
