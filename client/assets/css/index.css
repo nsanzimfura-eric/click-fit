@@ -10,7 +10,7 @@
   --secondary-green: #70cd74;
   --opaque-green: #70cd7572;
   --primary-dark: #000000;
-  --secondary-dark: #141313;
+  --secondary-dark: #14131387;
   --primary-white: #ffffff;
   --secondary-white: #e5efe7;
 
@@ -73,7 +73,7 @@ body {
 .click-fit-bg-gif {
   inset: 0;
   margin: 0;
-  opacity: 0.2;
+  opacity: 0.1;
   z-index: 0;
   width: 100vw;
   height: 100vh;
@@ -117,13 +117,40 @@ body {
 }
 .btn-register:hover {
   border-color: var(--primary-white);
+  color: var(--primary-white);
 }
 
 /* Banner home */
 /* herp title */
-.click-fit-hero-title {
-  padding-left: 20%;
+.click-fit-home-left {
+  padding-left: 10%;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+@media screen and (max-width: 1440px) {
+  .click-fit-home-left {
+    padding-left: 7%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .click-fit-home-left {
+    padding-left: 5%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .click-fit-home-left {
+    padding-left: 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .click-fit-home-left {
+    min-height: fit-content;
+    gap: 20px;
+  }
+}
+
 .click-fit-hero-title h1,
 .click-fit-hero-title h1 span {
   color: var(--primary-white);
@@ -133,4 +160,71 @@ body {
 }
 .click-fit-hero-title h1 span {
   color: var(--primary-green);
+}
+
+/* Upload box */
+
+.upload-box {
+  border: var(--border-dashed);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: fit-content;
+  border-color: var(--primary-white);
+  cursor: pointer;
+}
+
+.info {
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  color: var(--primary-white);
+  cursor: pointer;
+}
+
+.info span {
+  font-size: var(--small);
+  color: var(--primary-white);
+}
+/* uploaded images holder */
+.imagesHolder {
+  height: fit-content;
+  display: none;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 1rem;
+}
+.imagesHolder img {
+  width: 50px;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  height: auto;
+  border: 5px;
+  cursor: pointer;
+}
+
+/* news */
+.cleck-fit-news-box {
+  margin-top: auto;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.news {
+  color: var(--primary-white);
+  font-size: var(--h3);
+  text-decoration: underline;
+  font-family: var(--poppins);
+}
+
+.newsText,
+.trainees {
+  color: var(--primary-white);
+  font-family: var(--poppins);
+  font-size: var(--span);
+}
+
+#dialyTrainees {
+  color: var(--primary-white);
 }
