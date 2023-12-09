@@ -121,11 +121,38 @@
         <div class="home-hero-wrapper row mt-5">
           <!-- hero section left -->
           <div class="click-fit-home-left col-12 col-md-6">
-            <div class="click-fit-hero-title">
+            <div class="click-fit-hero-title mt-0 mt-lg-4">
               <h1><span>TIME</span> TO</h1>
               <h1>GET <span>FIT</span></h1>
             </div>
+            <!-- upload box -->
+            <div
+              class="upload-box d-flex justify-content-center align-items-center"
+            >
+              <input
+                type="file"
+                id="fileInput"
+                accept="image/*"
+                multiple
+                style="display: none"
+              />
+              <img src="./assets/images/upload-icon.svg" alt="Upload Icon" />
+              <span>Click here to upload or Drag and Drop image</span>
+            </div>
+            <!-- news box -->
+            <div class="cleck-fit-news-box">
+              <h3 class="news">News</h3>
+              <p id="newsText">
+                January 30th is the day in 1975 that the Monitor National Marine
+                Sanctuary is established as the first United States National
+                Marine Sanctuary.
+              </p>
+              <span class="trainees"
+                >Daily Clients: <strong id="dialyTrainees">30</strong></span
+              >
+            </div>
           </div>
+
           <!-- carousel images right section -->
           <div class="click-fit-home-right p-0 m-0 col-12 col-md-6">
             <div class="container-images bg-none">
@@ -142,20 +169,17 @@
                   </div>
                 </div>
               </label>
-              <input type="radio" name="slide" id="c2" />
+              <input type="radio" name="slide" id="c2" checked />
               <label for="c2" class="card">
                 <div class="row">
                   <div class="icon">2</div>
                   <div class="description">
-                    <h3>Nutritionist/Dietician</h3>
-                    <p>
-                      Nutritionists or Dieticians in a gym setting provide
-                      dietary advice tailored to clients.
-                    </p>
+                    <h3>Why You?</h3>
+                    <p>Looking better is your will and our responsibility</p>
                   </div>
                 </div>
               </label>
-              <input type="radio" name="slide" id="c3" checked />
+              <input type="radio" name="slide" id="c3" />
               <label for="c3" class="card">
                 <div class="row">
                   <div class="icon">3</div>

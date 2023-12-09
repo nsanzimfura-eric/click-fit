@@ -119,119 +119,18 @@ body {
   border-color: var(--primary-white);
 }
 
-/*  Carousel */
-/* Container Styles */
-.container {
-  max-width: 100% !important;
-  width: 100%;
-  height: 500px;
-  perspective: 1000px;
-  perspective-origin: 50% 50%;
-  transform-style: preserve-3d;
-  position: relative;
-  overflow: hidden;
-  max-height: fit-content;
-  margin: 10px auto;
-  z-index: 5;
+/* Banner home */
+/* herp title */
+.click-fit-hero-title {
+  padding-left: 20%;
 }
-
-.container .availableonSm {
-  display: none;
+.click-fit-hero-title h1,
+.click-fit-hero-title h1 span {
+  color: var(--primary-white);
+  font-family: var(--julius);
+  font-size: var(--h1);
+  font-weight: 900;
 }
-
-@media screen and (max-width: 425px) {
-  .container .availableonSm {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    flex-wrap: wrap;
-    width: 100%;
-    height: fit-content;
-    padding: 15px;
-  }
-
-  .container .availableonSm .singleProduct {
-    width: 100%;
-    aspect-ratio: 1/1;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .container .availableonSm .singleProduct {
-    aspect-ratio: 1/1.2;
-  }
-}
-
-/* Carousel Flow Styles */
-.carouselflow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  backface-visibility: visible;
-  transform-style: preserve-3d;
-  transform-origin: 50% 50%;
-  cursor: pointer;
-  transition: 1s all ease-out;
-}
-
-@media screen and (max-width: 425px) {
-  .carouselflow {
-    display: none;
-  }
-}
-
-.carouselflow-item {
-  width: 320px;
-  aspect-ratio: 1/1;
-  height: auto;
-  transform-origin: 50% 100%;
-  position: absolute;
-  backface-visibility: visible;
-  top: -160px;
-  left: -160px;
-  border: 6px solid #eee;
-  border-radius: 8px;
-  background-color: #111;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  transition: 1.25s all cubic-bezier(0.17, 0.75, 0.58, 0.95);
-  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.7);
-}
-
-@media screen and (max-width: 780px) {
-  .carouselflow-item {
-    width: 300px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .carouselflow-item {
-    width: 300px;
-  }
-}
-
-@media screen and (max-height: 500px) {
-  .carouselflow-item {
-    height: 300px;
-  }
-}
-
-/* Image Display Styles */
-.image-display {
-  position: fixed;
-  cursor: pointer;
-  width: 1000px;
-  height: 600px;
-  top: 50%;
-  left: 50%;
-  margin-top: -300px;
-  margin-left: -500px;
-  border: 2px solid /* Replace with your color variable value for green */;
-  border-radius: 4px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  transition: 0.5s all ease-out;
-  transform: scale(0, 0);
+.click-fit-hero-title h1 span {
+  color: var(--primary-green);
 }
