@@ -1,10 +1,3 @@
-body {
-  background-color: rgb(5, 5, 5);
-  padding: 0;
-  margin: 0;
-  color: white;
-}
-
 /* variables */
 
 :root {
@@ -13,8 +6,9 @@ body {
   --poppins: "Poppins", sans-serif;
 
   /* colors */
-  --primary-green: #33b738;
+  --primary-green: #75f94c;
   --secondary-green: #70cd74;
+  --opaque-green: #70cd7572;
   --primary-dark: #000000;
   --secondary-dark: #141313;
   --primary-white: #ffffff;
@@ -31,4 +25,213 @@ body {
   /* Line Height Variables */
   --line-height-heading: 1.2;
   --line-height-body: 1.4;
+
+  /* borders */
+  --border: 1px solid var(--primary-green);
+  --border-dashed: 1px dashed var(--primary-green);
+}
+
+body {
+  background-color: var(--primary-dark);
+  padding: 0;
+  margin: 0;
+  color: var(--primary-white);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: var(--poppins);
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+/* home main wrapper ------*/
+.main-wrapper {
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  padding: 50px;
+}
+@media screen and (max-width: 1600px) {
+  .main-wrapper {
+    padding: 30px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .main-wrapper {
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .main-wrapper {
+    padding: 15px;
+  }
+}
+
+/* bg animation */
+.click-fit-bg-gif {
+  inset: 0;
+  margin: 0;
+  opacity: 0.2;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+/* Nav bar */
+.navbar-brand {
+  text-decoration: none;
+  width: fit-content;
+  height: fit-content;
+  cursor: pointer;
+}
+.click-fit-logo {
+  height: 50px;
+  width: auto;
+}
+/* toggler icon */
+.navbar-toggler,
+.navbar-toggler-icon {
+  color: var(--primary-green);
+  background-color: none;
+}
+/* nav links */
+.nav-link {
+  color: var(--primary-white);
+  font-family: var(--poppins);
+  font-size: var(--p);
+}
+.nav-link:hover {
+  color: var(--secondary-green);
+}
+.nav-item .active {
+  color: var(--secondary-green) !important;
+}
+.btn-register {
+  background-color: none;
+  font-size: var(--p);
+  font-family: var(--poppins);
+  color: var(--primary-green);
+  border: var(--border);
+}
+.btn-register:hover {
+  border-color: var(--primary-white);
+}
+
+/*  Carousel */
+/* Container Styles */
+.container {
+  max-width: 100% !important;
+  width: 100%;
+  height: 500px;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+  position: relative;
+  overflow: hidden;
+  max-height: fit-content;
+  margin: 10px auto;
+  z-index: 5;
+}
+
+.container .availableonSm {
+  display: none;
+}
+
+@media screen and (max-width: 425px) {
+  .container .availableonSm {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex-wrap: wrap;
+    width: 100%;
+    height: fit-content;
+    padding: 15px;
+  }
+
+  .container .availableonSm .singleProduct {
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .container .availableonSm .singleProduct {
+    aspect-ratio: 1/1.2;
+  }
+}
+
+/* Carousel Flow Styles */
+.carouselflow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  backface-visibility: visible;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50%;
+  cursor: pointer;
+  transition: 1s all ease-out;
+}
+
+@media screen and (max-width: 425px) {
+  .carouselflow {
+    display: none;
+  }
+}
+
+.carouselflow-item {
+  width: 320px;
+  aspect-ratio: 1/1;
+  height: auto;
+  transform-origin: 50% 100%;
+  position: absolute;
+  backface-visibility: visible;
+  top: -160px;
+  left: -160px;
+  border: 6px solid #eee;
+  border-radius: 8px;
+  background-color: #111;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: 1.25s all cubic-bezier(0.17, 0.75, 0.58, 0.95);
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.7);
+}
+
+@media screen and (max-width: 780px) {
+  .carouselflow-item {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .carouselflow-item {
+    width: 300px;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  .carouselflow-item {
+    height: 300px;
+  }
+}
+
+/* Image Display Styles */
+.image-display {
+  position: fixed;
+  cursor: pointer;
+  width: 1000px;
+  height: 600px;
+  top: 50%;
+  left: 50%;
+  margin-top: -300px;
+  margin-left: -500px;
+  border: 2px solid /* Replace with your color variable value for green */;
+  border-radius: 4px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: 0.5s all ease-out;
+  transform: scale(0, 0);
 }

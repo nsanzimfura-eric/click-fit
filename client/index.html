@@ -42,9 +42,12 @@
       content="https://avatars.githubusercontent.com/u/91186046?v=4"
     />
     <!-- Links -->
-    <link rel="icon" href="./assets/images/click-fit.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="./assets/css/index.css" />
-    <!-- fonts --1 -->
+    <!-- bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -55,21 +58,140 @@
       href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Gabarito&family=Julius+Sans+One&family=Open+Sans:ital,wght@0,300;0,400;0,600;1,800&family=Poppins:ital,wght@0,300;1,200;1,300;1,900&family=Ubuntu:ital,wght@0,300;0,500;1,400;1,700&family=Young+Serif&display=swap"
       rel="stylesheet"
     />
+    <!-- css -->
+    <link rel="icon" href="./assets/images/click-fit.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="stylesheet" href="./assets/css/imagesSliders.css" />
   </head>
   <body>
-    <header>
-      <!-- Navigation and logo here -->
-    </header>
-
+    <!-- ######## main page -->
     <main>
-      <h1>Welcome to Click Fit: Your Sports and Fitness Guide</h1>
-      <!-- Main content here -->
+      <div class="main-wrapper bg-none position-relative" id="home">
+        <!-- bg gif absolute -->
+        <img
+          src="./assets/images/bg-arms.gif"
+          class="click-fit-bg-gif position-absolute"
+          alt="Bg gif Arms"
+        />
+        <!-- ############# header -- Navbar-->
+        <nav class="navbar navbar-expand-lg bg-none click-fit-header">
+          <div class="container-fluid bg-none">
+            <a class="navbar-brand me-auto" href="#home">
+              <img
+                class="click-fit-logo"
+                src="./assets/images/logo.svg"
+                alt="Logo"
+              />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarText"
+              aria-controls="navbarText"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bg-none navbar-collapse" id="navbarText">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item mx-md-1">
+                  <a class="nav-link active" href="#home" aria-current="page"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item mx-md-1">
+                  <a class="nav-link" href="#home">About</a>
+                </li>
+                <li class="nav-item mx-md-1">
+                  <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item mx-md-1">
+                  <a class="nav-link" href="#">Contact</a>
+                </li>
+              </ul>
+              <button class="btn btn-register ms-md-2">
+                Register a Client
+              </button>
+            </div>
+          </div>
+        </nav>
+        <!-- ######### banner home section -->
+        <div class="home-hero-wrapper row mt-5">
+          <!-- hero section left -->
+          <div class="click-fit-home-left col-12 col-md-6">
+            <div class="click-fit-hero-title">
+              <h1><span>TIME</span> TO</h1>
+              <h1>GET <span>FIT</span></h1>
+            </div>
+          </div>
+          <!-- carousel images right section -->
+          <div class="click-fit-home-right p-0 m-0 col-12 col-md-6">
+            <div class="container-images bg-none">
+              <input type="radio" name="slide" id="c1" />
+              <label for="c1" class="card position-relative">
+                <div class="row bg-none">
+                  <div class="icon">1</div>
+                  <div class="description">
+                    <h3>Personal Trainer</h3>
+                    <p>
+                      Personal Trainers work one-on-one with clients to create
+                      and implement customized fitness plans.
+                    </p>
+                  </div>
+                </div>
+              </label>
+              <input type="radio" name="slide" id="c2" />
+              <label for="c2" class="card">
+                <div class="row">
+                  <div class="icon">2</div>
+                  <div class="description">
+                    <h3>Nutritionist/Dietician</h3>
+                    <p>
+                      Nutritionists or Dieticians in a gym setting provide
+                      dietary advice tailored to clients.
+                    </p>
+                  </div>
+                </div>
+              </label>
+              <input type="radio" name="slide" id="c3" checked />
+              <label for="c3" class="card">
+                <div class="row">
+                  <div class="icon">3</div>
+                  <div class="description">
+                    <h3>What is There</h3>
+                    <p>
+                      You will love there if you come. there are all kinds of
+                      things to to make you shaped.
+                    </p>
+                  </div>
+                </div>
+              </label>
+              <input type="radio" name="slide" id="c4" />
+              <label for="c4" class="card">
+                <div class="row">
+                  <div class="icon">4</div>
+                  <div class="description">
+                    <h3>Sports Massage Therapist</h3>
+                    <p>
+                      They provide massage therapy to alleviate muscle soreness
+                    </p>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
-
+    <!-- ############# footer  -->
     <footer>
       <!-- Footer content here -->
     </footer>
 
-    <!-- Scripts at the end of the body -->
+    <!-- ##############scripts -->
+    <script src="./assets/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

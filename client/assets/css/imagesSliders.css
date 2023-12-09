@@ -1,0 +1,179 @@
+:root {
+  /* Fonts */
+  --julius: "Julius Sans One", sans-serif;
+  --poppins: "Poppins", sans-serif;
+
+  /* colors */
+  --primary-green: #75f94c;
+  --secondary-green: #70cd74;
+  --opaque-green: #70cd7572;
+  --primary-dark: #000000;
+  --secondary-dark: #14131387;
+  --primary-white: #ffffff;
+  --secondary-white: #e5efe7;
+
+  /* Font Size Variables */
+  --h1: 2.5rem;
+  --h2: 1.75rem;
+  --h3: 1.5rem;
+  --p: 1rem;
+  --small: 0.8rem;
+  --span: 0.875rem;
+
+  /* Line Height Variables */
+  --line-height-heading: 1.2;
+  --line-height-body: 1.4;
+
+  /* borders */
+  --border: 1px solid var(--primary-green);
+  --border-white: 1px solid var(--primary-white);
+  --border-dashed: 1px dashed var(--primary-green);
+  --border-opaque: 1px solid var(--opaque-green);
+}
+
+* {
+  color: var(--primary-dark);
+  font-size: var(--p);
+  font-family: var(--poppins);
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+.container-images {
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: start;
+  height: 500px;
+}
+
+@media screen and (max-width: 400px) {
+  .container-images {
+    height: 300px;
+  }
+}
+
+.card {
+  width: 80px;
+  border-radius: 0.75rem;
+  background-size: cover;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 2rem;
+  margin: 0 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
+  box-shadow: 0px 10px 30px -5px var(--secondary-dark);
+  background-color: transparent;
+  border: var(--border-opaque);
+}
+@media screen and (max-width: 400px) {
+  .card {
+    width: 50px;
+    border-radius: 0.65rem;
+    margin: 0 5px;
+  }
+}
+
+.card > .row {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.card > .row > .icon {
+  background: var(--primary-green);
+  color: var(--primary-dark);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--h2);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@media screen and (max-width: 400px) {
+  .card > .row > .icon {
+    display: none;
+  }
+}
+
+.card > .row > .description {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(30px);
+  transition-delay: 0.3s;
+  transition: all 0.3s ease;
+  color: var(--primary-white);
+  font-size: var(--p);
+  font-family: var(--poppins);
+  backdrop-filter: blur(34);
+  background-color: var(--secondary-dark);
+  backdrop-filter: blur(34);
+  -webkit-backdrop-filter: blur(34);
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.description p {
+  color: var(--primary-white);
+  padding-top: 5px;
+  font-size: var(--small);
+  width: 100%;
+}
+
+.description h3 {
+  text-transform: uppercase;
+  font-size: var(--h3);
+}
+@media screen and (max-width: 400px) {
+  .description h3 {
+    font-size: var(--p);
+  }
+  .description p {
+    font-size: 12px;
+  }
+}
+
+input {
+  display: none;
+}
+
+input:checked + label {
+  width: 100%;
+  padding: 15px;
+  color: var(--primary-white);
+  font-family: var(--poppins);
+  font-size: var(--p);
+  border: var(--border);
+}
+
+input:checked + label .description {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.card[for="c1"] {
+  background-image: url("../images/persolalTrainer.jpg");
+}
+.card[for="c2"] {
+  background-image: url("../images/body-builder-no-bg.png");
+}
+.card[for="c3"] {
+  background-image: url("../images/gym.jpg");
+}
+.card[for="c4"] {
+  background-image: url("../images/1.png");
+}
