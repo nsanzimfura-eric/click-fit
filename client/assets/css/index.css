@@ -82,7 +82,6 @@ body {
 .home-hero-wrapper,
 .navbar {
   background-color: transparent;
-  z-index: 2;
   position: relative;
 }
 /* Nav bar */
@@ -235,4 +234,39 @@ body {
 
 #dialyTrainees {
   color: var(--primary-white);
+}
+
+/* Model popup */
+
+.closeBtn img {
+  width: 40px;
+  cursor: pointer;
+  height: 40px;
+  border: none;
+}
+
+.titleAdd {
+  font-family: var(--poppins);
+  color: var(--primary-white);
+}
+
+/* override modal */
+.modal-header {
+  border-color: var(--secondary-green);
+}
+.modal-footer {
+  border-top: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+/* form top add user */
+#FormAddUser label {
+  color: var(--primary-white);
+}
+#FormAddUser .form-group {
+  margin: 5px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
