@@ -126,13 +126,16 @@
               <h1>GET <span>FIT</span></h1>
             </div>
             <!-- upload box -->
-            <div class="upload-box mt-3 d-flex flex-column">
+            <div
+              class="upload-box mt-3 d-flex flex-column"
+              id="upload_dargable_area"
+            >
               <input
                 type="file"
                 id="fileInput"
                 accept="image/*"
                 multiple
-                style="display: none"
+                hidden
               />
               <div
                 class="info d-flex justify-content-center align-items-center"
@@ -140,10 +143,7 @@
                 <img src="./assets/images/upload-icon.svg" alt="Upload Icon" />
                 <span>Upload Image by Click or Drag and Drop</span>
               </div>
-              <div class="imagesHolder" id="imagesHolder">
-                <img src="./assets/images/1.png" alt="Holder" />
-                <img src="./assets/images/gym.jpg" alt="Holder" />
-              </div>
+              <div class="imagesHolder" id="imagesHolder"></div>
             </div>
             <!-- news box -->
             <div class="cleck-fit-news-box">

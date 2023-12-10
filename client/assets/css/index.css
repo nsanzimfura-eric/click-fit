@@ -79,6 +79,12 @@ body {
   height: 100vh;
   object-fit: cover;
 }
+.home-hero-wrapper,
+.navbar {
+  background-color: transparent;
+  z-index: 2;
+  position: relative;
+}
 /* Nav bar */
 .navbar-brand {
   text-decoration: none;
@@ -172,6 +178,9 @@ body {
   border-color: var(--primary-white);
   cursor: pointer;
 }
+.dragging {
+  border-color: var(--primary-green);
+}
 
 .info {
   width: 100%;
@@ -189,11 +198,10 @@ body {
 /* uploaded images holder */
 .imagesHolder {
   height: fit-content;
-  display: none;
+  display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 1rem;
 }
 .imagesHolder img {
   width: 50px;
