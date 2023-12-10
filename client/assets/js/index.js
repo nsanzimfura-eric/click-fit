@@ -1,8 +1,5 @@
-// global copnstants
-// colors
-const green = "#75f94c";
-const white = "#ffffff";
-const black = "#000000";
+// imports
+import uploadFiles from "./imagesUpload";
 
 //  upload and drage and drop functionaliy
 const uploadArea = document.getElementById("upload_dargable_area");
@@ -35,24 +32,28 @@ uploadArea.addEventListener("dragleave", (e) => {
 uploadArea.addEventListener("drop", (e) => {
   e.preventDefault();
   e.stopPropagation();
-  uploadArea.classList.add("dragging");
+  uploadArea.classList.remove("dragging");
 
   const files = e.dataTransfer.files;
   uploadFilesPreview(files);
 });
 
 // handle file uploads in preview
-const uploadFilesPreview = (files) => {
-  console.log(files, "test files");
+const uploadFilesPreview = async (files) => {
+  const validFiles = [];
   for (let i = 0; i < files.length; i++) {
     const file = files[i];
     // Only upload images
     if (!file.type.match("image.*")) {
-      return alert("Only upload image plz!");
+      alert("Only upload image plz!");
+      continue;
     }
+    //  get allowed files
+    validFiles.push(file);
     const reader = new FileReader();
 
     reader.onload = ((singleImage) => {
+      uploadArea.classList.add("dragging");
       return (e) => {
         // Read thumbnails
         const imgElement = document.createElement("img");
@@ -64,6 +65,14 @@ const uploadFilesPreview = (files) => {
     })(file);
     uploadArea.classList.remove("dragging");
 
-    const images = reader.readAsDataURL(file);
+    reader.readAsDataURL(file);
+  }
+  // Handle upload call
+  if (validFiles.length > 0) {
+    try {
+      await uploadFiles(validFiles);
+    } catch (error) {
+      console.error("Error during file upload:", error);
+    }
   }
 };

@@ -1,0 +1,8 @@
+# Environment variables
+.env
+
+# Dependencies
+/node_modules
+
+# Other unnecessary files
+.DS_Store
