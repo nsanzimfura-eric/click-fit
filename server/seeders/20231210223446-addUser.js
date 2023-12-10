@@ -1,11 +1,14 @@
 "use strict";
 
-/** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert(
-      "users",
-      [
+    const existingUsers = await queryInterface.sequelize.query(
+      `SELECT * FROM users;`,
+      { type: queryInterface.sequelize.QueryTypes.SELECT }
+    );
+
+    if (existingUsers.length === 0) {
+      await queryInterface.bulkInsert("users", [
         {
           fullName: "Clickfit Admin",
           email: "admin@clickfit.com",
@@ -15,9 +18,10 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
-      ],
-      {}
-    );
+      ]);
+    } else {
+      console.log("Seeding skipped: users already exist.");
+    }
   },
 
   async down(queryInterface, Sequelize) {
