@@ -88,3 +88,33 @@ const previewImagesUploaded = (images) => {
 
   imagesHolder.style.marginTop = "1rem";
 };
+
+// handle images preview and onload
+const fetchImagesAndDisplay = async () => {
+  imagesHolder.innerHTML = "";
+  const url = "http://localhost:8080/api/images";
+  const imgUrl = "http://localhost:8080/click-fit-images";
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const imageFilenames = await response.json();
+    const imagesToDisplay = [];
+
+    imageFilenames?.images.forEach((filename) => {
+      imagesToDisplay.push({ src: `${imgUrl}/${filename}`, alt: filename });
+    });
+
+    // display the images on the page
+    if (imagesToDisplay) {
+      previewImagesUploaded(imagesToDisplay);
+    }
+  } catch (error) {
+    console.error("Failed to fetch images:", error);
+  }
+};
+
+window.onload = function () {
+  fetchImagesAndDisplay();
+};
