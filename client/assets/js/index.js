@@ -115,6 +115,23 @@ const fetchImagesAndDisplay = async () => {
   }
 };
 
-window.onload = function () {
+//  AJAX calls
+// when Window finished loading
+$(document).ready(function () {
+  // display images
   fetchImagesAndDisplay();
+  // ajax call
+  fetchNews();
+});
+
+const fetchNews = () => {
+  const urlNews = "http://numbersapi.com/1/30/date?json";
+  $.get(urlNews, (data, status) => {
+    if (status === "success") {
+      $("#newsText").text(data.text);
+      $("#dialyTrainees").text(data.number);
+    }
+  }).fail((jqXHR, textStatus, errorThrown) => {
+    console.error("Error fetching news:", textStatus, errorThrown);
+  });
 };
