@@ -135,3 +135,26 @@ const fetchNews = () => {
     console.error("Error fetching news:", textStatus, errorThrown);
   });
 };
+
+// Form upload functionality
+const form = document.getElementById("FormAddUser");
+const fullName = document.getElementById("fullName");
+const email = document.getElementById("emailInput");
+const password = document.getElementById("passwordInput");
+const closeModalBtnCancel = document.getElementById("closeModalBtnCancel");
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const nameValue = fullName.value;
+  const emailValue = email.value;
+  const passwordValue = password.value;
+
+  const formData = {
+    fullName: nameValue,
+    email: emailValue,
+    password: passwordValue,
+  };
+  console.log(formData);
+  // close modal
+  closeModalBtnCancel.click();
+});
