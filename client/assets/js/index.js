@@ -1,5 +1,5 @@
 // imports
-import uploadFiles from "./imagesUpload";
+import uploadFiles from "./imagesUpload.js";
 
 //  upload and drage and drop functionaliy
 const uploadArea = document.getElementById("upload_dargable_area");
@@ -20,7 +20,6 @@ uploadArea.addEventListener("dragover", (e) => {
   e.preventDefault();
   e.stopPropagation();
   uploadArea.classList.add("dragging");
-  activeDraggingShow();
 });
 
 uploadArea.addEventListener("dragleave", (e) => {
