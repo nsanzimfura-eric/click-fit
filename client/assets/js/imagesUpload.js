@@ -12,10 +12,6 @@ const uploadFiles = async (files) => {
       body: formData,
     });
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
     const data = await response.json();
     console.log("Successfully uploaded", data);
   } catch (error) {

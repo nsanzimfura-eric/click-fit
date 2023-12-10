@@ -11,7 +11,7 @@ uploadArea.addEventListener("click", function () {
   fileInput.click();
 
   fileInput.onchange = function (e) {
-    uploadFilesPreview(e.target.files);
+    processUploadedImages(e.target.files);
   };
 });
 
@@ -34,15 +34,17 @@ uploadArea.addEventListener("drop", (e) => {
   uploadArea.classList.remove("dragging");
 
   const files = e.dataTransfer.files;
-  uploadFilesPreview(files);
+  processUploadedImages(files);
 });
 
 // handle file uploads in preview
-const uploadFilesPreview = async (files) => {
+const processUploadedImages = async (files) => {
   const validFiles = [];
+  let imagesPreviewArr = [];
+
   for (let i = 0; i < files.length; i++) {
     const file = files[i];
-    // Only upload images
+    // Only upload images type
     if (!file.type.match("image.*")) {
       alert("Only upload image plz!");
       continue;
@@ -54,12 +56,8 @@ const uploadFilesPreview = async (files) => {
     reader.onload = ((singleImage) => {
       uploadArea.classList.add("dragging");
       return (e) => {
-        // Read thumbnails
-        const imgElement = document.createElement("img");
-        imgElement.src = e.target.result;
-        imgElement.alt = singleImage.name;
-        imagesHolder.appendChild(imgElement);
-        imagesHolder.style.marginTop = "1rem";
+        // Read thumbnails/preview
+        imagesPreviewArr.push({ src: e.target.result, alt: singleImage.name });
       };
     })(file);
     uploadArea.classList.remove("dragging");
@@ -74,4 +72,19 @@ const uploadFilesPreview = async (files) => {
       console.error("Error during file upload:", error);
     }
   }
+  if ((imagesPreviewArr, length > 0)) {
+    previewImagesUploaded(imagesPreviewArr);
+  }
+};
+
+// preview images as thumbnails
+const previewImagesUploaded = (images) => {
+  images.forEach((img) => {
+    const imgElement = document.createElement("img");
+    imgElement.src = img.src;
+    imgElement.alt = img.alt;
+    imagesHolder.appendChild(imgElement);
+  });
+
+  imagesHolder.style.marginTop = "1rem";
 };
