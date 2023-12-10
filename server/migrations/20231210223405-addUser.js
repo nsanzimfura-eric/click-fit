@@ -30,6 +30,14 @@ module.exports = {
         type: Sequelize.TINYINT,
         defaultValue: 1,
       },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      },
     });
   },
 
