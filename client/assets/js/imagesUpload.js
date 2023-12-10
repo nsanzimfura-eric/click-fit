@@ -1,5 +1,5 @@
 const uploadFiles = async (files) => {
-  const url = "http://localhost:8080/api/upload"; // Replace with your server URL
+  const url = "http://localhost:8080/api/upload";
   const formData = new FormData();
 
   for (const file of files) {

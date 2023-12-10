@@ -98,7 +98,7 @@ body {
 /* toggler icon */
 .navbar-toggler,
 .navbar-toggler-icon {
-  color: var(--primary-green);
+  color: var(--primary-white);
   background-color: none;
 }
 /* nav links */
@@ -176,6 +176,14 @@ body {
   max-width: fit-content;
   border-color: var(--primary-white);
   cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .upload-box {
+    margin: 0 auto;
+  }
+  #upload_dargable_area {
+    width: 90vw;
+  }
 }
 .dragging {
   border-color: var(--primary-green);
@@ -258,6 +266,19 @@ body {
   border-top: none;
   padding: 0;
   margin-top: 1rem;
+}
+
+@media screen and (max-width: 400px) {
+  .modal-footer {
+    margin-top: 30px;
+    flex-direction: column-reverse;
+  }
+  .modal-footer .btn {
+    width: 100%;
+  }
+  .modal-footer .btn-secondary {
+    margin-top: 20px;
+  }
 }
 
 /* form top add user */

@@ -137,6 +137,7 @@
 .description h3 {
   text-transform: uppercase;
   font-size: var(--h3);
+  color: var(--primary-white);
 }
 @media screen and (max-width: 400px) {
   .description h3 {
