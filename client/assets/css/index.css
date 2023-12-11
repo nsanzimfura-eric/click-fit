@@ -357,3 +357,11 @@ body {
     border-color: transparent;
   }
 }
+/* bg alternatives */
+#bgDots {
+  opacity: 0;
+}
+#bgArms,
+#bgDots {
+  transition: all 1s ease-in-out;
+}

@@ -202,12 +202,14 @@ const listOfClientsbtn = document.getElementById(
 );
 
 const fetchAllUsers = () => {
+  const accordionBox = document.getElementById("accordionFlushExample");
   $.ajax({
     url: usersApi,
     type: "GET",
     contentType: "application/json",
     success: function (data, status) {
-      console.log("Users fetched successfully:", data);
+      // clear div first
+      accordionBox.innerHTML = "";
       // Handle the fetched user data here
       // For example, display the users in a table or list
       const users = data.data;
@@ -222,8 +224,6 @@ const fetchAllUsers = () => {
             role: user.type,
           };
           const accordion = accordionMaker(userDetails);
-          const accordionBox = document.getElementById("accordionFlushExample");
-
           accordionBox.innerHTML += accordion;
         });
       }
@@ -237,3 +237,26 @@ const fetchAllUsers = () => {
 
 // show users by on click
 listOfClientsbtn.addEventListener("click", fetchAllUsers);
+
+const bgDots = document.getElementById("bgDots");
+const bgArms = document.getElementById("bgArms");
+const rightHero = document.getElementById("rightHero");
+const leftHero = document.getElementById("leftHero");
+
+// handle change bg;
+rightHero.addEventListener("mouseover", () => {
+  bgArms.style.opacity = 0.1;
+  bgDots.style.opacity = 0;
+});
+rightHero.addEventListener("mouseleave", () => {
+  bgArms.style.opacity = 0;
+  bgDots.style.opacity = 0.1;
+});
+leftHero.addEventListener("mouseover", () => {
+  bgArms.style.opacity = 0;
+  bgDots.style.opacity = 0.1;
+});
+leftHero.addEventListener("mouseleave", () => {
+  bgArms.style.opacity = 0.1;
+  bgDots.style.opacity = 0;
+});

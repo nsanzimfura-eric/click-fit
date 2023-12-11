@@ -72,9 +72,16 @@
       <div class="main-wrapper bg-none position-relative" id="home">
         <!-- bg gif absolute -->
         <img
-          src="./assets/images/bg-arms.gif"
+          src="./assets/images/bg1.gif"
           class="click-fit-bg-gif position-absolute"
           alt="Bg gif Arms"
+          id="bgArms"
+        />
+        <img
+          src="./assets/images/bg2.gif"
+          class="click-fit-bg-gif position-absolute"
+          alt="Bg gif Arms"
+          id="bgDots"
         />
         <!-- ############# header -- Navbar-->
         <nav class="navbar navbar-expand-lg bg-none click-fit-header">
@@ -251,7 +258,7 @@
             </div>
           </div>
           <!-- hero section left -->
-          <div class="click-fit-home-left col-12 col-md-6">
+          <div class="click-fit-home-left col-12 col-md-6" id="leftHero">
             <div class="click-fit-hero-title mt-0 mt-lg-4">
               <h1><span>TIME</span> TO</h1>
               <h1>GET <span>FIT</span></h1>
@@ -287,7 +294,10 @@
           </div>
 
           <!-- carousel images right section -->
-          <div class="click-fit-home-right p-0 m-0 col-12 col-md-6">
+          <div
+            class="click-fit-home-right p-0 m-0 col-12 col-md-6"
+            id="rightHero"
+          >
             <div class="container-images bg-none">
               <input type="radio" name="slide" id="c1" />
               <label for="c1" class="card position-relative">
