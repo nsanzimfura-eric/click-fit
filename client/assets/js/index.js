@@ -131,6 +131,7 @@ const fetchNews = () => {
     if (status === "success") {
       $("#newsText").text(data.text);
       $("#dialyTrainees").text(data.number);
+      $("#cleck-fit-news-box").css("transform", "translate(0)");
     }
   }).fail((jqXHR, textStatus, errorThrown) => {
     console.error("Error fetching news:", textStatus, errorThrown);

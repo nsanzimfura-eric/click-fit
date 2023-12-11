@@ -166,6 +166,16 @@ body {
 .click-fit-hero-title h1 span {
   color: var(--primary-green);
 }
+.click-fit-hero-title h1 {
+  width: fit-content;
+  animation: typing 2s steps(50), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid var(--secondary-green);
+}
+.click-fit-hero-title h1:nth-child(1) {
+  border-right: 3px solid var(--secondary-white);
+}
 
 /* Upload box */
 
@@ -238,6 +248,10 @@ body {
   color: var(--primary-white);
   font-family: var(--poppins);
   font-size: var(--span);
+}
+.cleck-fit-news-box {
+  transform: translateX(-100vw);
+  transition: all 2s ease-in-out;
 }
 
 #dialyTrainees {
@@ -329,4 +343,17 @@ body {
 .accordion-body span strong {
   color: var(--secondary-dark);
   font-size: var(--small);
+}
+
+/* global animations  */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
 }
