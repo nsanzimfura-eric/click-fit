@@ -15,7 +15,7 @@ app.use(express.json());
 // routes
 app.get("/", (req, res) => res.send("Welcome to click-fit server"));
 app.use("/api", uploadRouter);
-app.use("/vi", usersRouter);
+app.use("/v1", usersRouter);
 // access images uploaded
 app.use("/click-fit-images", express.static("upload_images"));
 

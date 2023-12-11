@@ -26,13 +26,20 @@ User.init(
       type: DataTypes.TINYINT,
       defaultValue: 1,
     },
+    createdAt: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
+    },
   },
   {
     sequelize,
     modelName: "User",
     tableName: "users",
     charset: "utf8mb4",
-    timestamps: false,
   }
 );
 
