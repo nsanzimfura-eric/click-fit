@@ -9,7 +9,9 @@
     "dev": "npm-run-all --serial migrate seed start-dev",
     "migrate": "sequelize-cli db:migrate",
     "seed": "sequelize-cli db:seed:all",
-    "start-dev": "nodemon server.js"
+    "start-dev": "nodemon server.js",
+    "migrate:undo": "sequelize-cli db:migrate:undo",
+    "seed:undo": "sequelize-cli db:seed:undo:all"
   },
   "keywords": [],
   "author": "",

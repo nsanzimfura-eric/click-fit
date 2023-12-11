@@ -21,7 +21,9 @@ app.use("/click-fit-images", express.static("upload_images"));
 
 (async () => {
   try {
-    console.log("users tables create successfully!");
+    // Establish db connection
+    await sequelize.authenticate();
+    console.log("Database connection has been established successfully.");
     app.listen(port, () =>
       console.log(`Server running on http://localhost:${port}`)
     );
