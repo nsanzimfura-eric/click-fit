@@ -1,5 +1,7 @@
 "use strict";
 
+// NOTE:
+//  -  Password is not hashed, and there is no authentication;
 module.exports = {
   async up(queryInterface, Sequelize) {
     const existingUsers = await queryInterface.sequelize.query(
@@ -10,9 +12,9 @@ module.exports = {
     if (existingUsers.length === 0) {
       await queryInterface.bulkInsert("users", [
         {
-          fullName: "Clickfit Admin",
-          email: "admin@clickfit.com",
-          password: "Password123@",
+          fullName: process.env.ADMIN_NAME,
+          email: process.env.ADMIN_EMAIL,
+          password: process.env.ADMIN_PASSWORD,
           type: "admin",
           active: 1,
           createdAt: new Date(),
