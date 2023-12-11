@@ -112,11 +112,12 @@
                   <a class="nav-link" href="#home">About</a>
                 </li>
                 <li class="nav-item mx-md-1">
-                  <a
+                  <span
                     class="nav-link"
-                    href="#"
                     id="staticBackdropLabelClientsList"
-                    >Clients List</a
+                    data-bs-toggle="modal"
+                    data-bs-target="#staticBackdropLabelClientsListModal"
+                    >Clients List</span
                   >
                 </li>
                 <li class="nav-item mx-md-1">
@@ -209,6 +210,42 @@
                       </button>
                     </div>
                   </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- MODAL FOR DISPLAYING USERS/CLIENTS -->
+          <div
+            class="modal fade"
+            id="staticBackdropLabelClientsListModal"
+            tabindex="-1"
+            aria-labelledby="staticBackdropLabelClientsListModalLabel"
+            aria-hidden="true"
+          >
+            <div
+              class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+            >
+              <div class="modal-content bg-light">
+                <div class="modal-header bg-dark">
+                  <h5 class="modal-title titleAdd" id="staticBackdropLabel">
+                    List of Registers Users
+                  </h5>
+                  <button
+                    type="button"
+                    class="close closeBtn"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                    aria-hidden="true"
+                  >
+                    <img src="./assets/images/cancel.svg" alt="Cancel" />
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <!-- listing users -->
+                  <div
+                    class="accordion accordion-flush"
+                    id="accordionFlushExample"
+                  ></div>
                 </div>
               </div>
             </div>

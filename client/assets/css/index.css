@@ -248,9 +248,25 @@ body {
 
 .closeBtn img {
   width: 40px;
+  aspect-ratio: 1/1;
   cursor: pointer;
-  height: 40px;
+  height: auto;
   border: none;
+}
+@media screen and (max-width: 1440px) {
+  .closeBtn img {
+    width: 30px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .closeBtn img {
+    width: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .closeBtn img {
+    width: 18px;
+  }
 }
 
 .titleAdd {
@@ -290,4 +306,27 @@ body {
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+
+/* display users */
+.name {
+  font-family: var(--julius);
+  font-weight: 900;
+  font-size: var(--p);
+}
+.role {
+  font-size: var(--small);
+  font-style: italic;
+  font-family: var(--poppins);
+  color: var(--secondary-dark);
+}
+
+.accordion-body span {
+  color: var(--primary-dark);
+  font-size: var(--span);
+}
+
+.accordion-body span strong {
+  color: var(--secondary-dark);
+  font-size: var(--small);
 }

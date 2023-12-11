@@ -1,5 +1,6 @@
 // imports
 import uploadFiles from "./imagesUpload.js";
+import accordionMaker from "./accordionMaker.js";
 
 //  upload and drage and drop functionaliy
 const uploadArea = document.getElementById("upload_dargable_area");
@@ -135,6 +136,8 @@ const fetchNews = () => {
     console.error("Error fetching news:", textStatus, errorThrown);
   });
 };
+// ################## USERS FUNCTIONALITY #################
+const usersApi = "http://localhost:8080/v1/users";
 
 // Form upload functionality
 const form = document.getElementById("FormAddUser");
@@ -155,6 +158,81 @@ form.addEventListener("submit", function (event) {
     password: passwordValue,
   };
   console.log(formData);
-  // close modal
-  closeModalBtnCancel.click();
+  // handle submit data
+  saveDataToTheDB(formData);
 });
+
+const saveDataToTheDB = (data) => {
+  // here we create ad admin that is already added in the database,
+  // by creating this user, it is like authentication, now we have right to post the user from the form
+  // By scallability, this may be changed to use authentication, in the future,
+  const admin = {
+    fullName: "ClickFit Admin",
+    email: "admin@clickfit.com",
+    password: "Password123#",
+  };
+
+  const formData = { ...data, admin };
+
+  $.ajax({
+    url: usersApi,
+    type: "POST",
+    contentType: "application/json",
+    data: JSON.stringify(formData),
+    success: function (data, status) {
+      console.log(data, status, "test------------");
+      if (status === "success" && data.data) {
+        alert("User added successfully");
+        console.log(data);
+        // close modal
+        closeModalBtnCancel.click();
+      }
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      console.error("Error adding user:", textStatus, errorThrown);
+      alert("Failed to add user: " + jqXHR.responseJSON.error);
+    },
+  });
+};
+
+// display added users
+const listOfClientsbtn = document.getElementById(
+  "staticBackdropLabelClientsList"
+);
+
+const fetchAllUsers = () => {
+  $.ajax({
+    url: usersApi,
+    type: "GET",
+    contentType: "application/json",
+    success: function (data, status) {
+      console.log("Users fetched successfully:", data);
+      // Handle the fetched user data here
+      // For example, display the users in a table or list
+      const users = data.data;
+      if (users) {
+        users.forEach((user) => {
+          const userDetails = {
+            id: user.id,
+            fullName: user.fullName,
+            email: user.email,
+            password: user.password,
+            date: new Date(user.createdAt),
+            role: user.type,
+          };
+          const accordion = accordionMaker(userDetails);
+          const accordionBox = document.getElementById("accordionFlushExample");
+
+          accordionBox.innerHTML += accordion;
+        });
+      }
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      console.error("Error fetching users:", textStatus, errorThrown);
+      alert("Failed to fetch users: " + jqXHR.responseJSON.error);
+    },
+  });
+};
+
+// show users by on click
+listOfClientsbtn.addEventListener("click", fetchAllUsers);
